@@ -8,7 +8,7 @@ const CHANNEL_ID = "3520693";
 // If your ThingSpeak channel is PUBLIC,
 // keep this as an empty string.
 
-const READ_API_KEY = "";
+const READ_API_KEY = "FGDVPQXHH6LE7FAG";
 
 
 // Gas threshold
