@@ -1,0 +1,1059 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --background: #070b14;
+
+    --card: #101724;
+
+    --card-light: #151e2d;
+
+    --border: #202c3e;
+
+    --text: #f8fafc;
+
+    --muted: #8b98aa;
+
+    --blue: #38bdf8;
+
+    --green: #22c55e;
+
+    --red: #ef4444;
+
+    --orange: #f59e0b;
+
+    --purple: #a78bfa;
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(56,189,248,0.08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(167,139,250,0.08),
+            transparent 30%
+        ),
+
+        var(--background);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background-circle {
+
+    position: fixed;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.08;
+
+    pointer-events: none;
+
+}
+
+
+.circle-1 {
+
+    background: var(--blue);
+
+    top: -150px;
+
+    left: -150px;
+
+}
+
+
+.circle-2 {
+
+    background: var(--purple);
+
+    bottom: -150px;
+
+    right: -150px;
+
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+.app {
+
+    width: 92%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 35px 0 25px;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.brand-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0ea5e9,
+            #6366f1
+        );
+
+    border-radius: 14px;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(14,165,233,0.25);
+
+}
+
+
+.brand h1 {
+
+    font-size: 24px;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+.brand p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 3px;
+
+}
+
+
+.connection-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 15px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    color: #b8c3d1;
+
+    font-size: 13px;
+
+}
+
+
+.status-dot {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+}
+
+
+.status-dot.online {
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 12px
+        var(--green);
+
+}
+
+
+.status-dot.offline {
+
+    background: var(--red);
+
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    min-height: 260px;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(14,165,233,0.15),
+            rgba(99,102,241,0.08)
+        );
+
+    border: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    position: relative;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(56,189,248,0.08);
+
+    right: -100px;
+
+    top: -100px;
+
+}
+
+
+.badge {
+
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    background:
+        rgba(34,197,94,0.1);
+
+    border:
+        1px solid
+        rgba(34,197,94,0.25);
+
+    color: var(--green);
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.hero h2 {
+
+    font-size: 43px;
+
+    line-height: 1.1;
+
+    max-width: 600px;
+
+}
+
+
+.hero h2 span {
+
+    color: var(--blue);
+
+}
+
+
+.hero p {
+
+    color: var(--muted);
+
+    margin-top: 15px;
+
+    font-size: 15px;
+
+}
+
+
+.hero-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.shield {
+
+    width: 130px;
+
+    height: 130px;
+
+    border-radius: 35px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 65px;
+
+    background:
+        rgba(56,189,248,0.08);
+
+    border:
+        1px solid
+        rgba(56,189,248,0.2);
+
+    box-shadow:
+        0 0 60px
+        rgba(56,189,248,0.08);
+
+}
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.card {
+
+    background:
+        rgba(16,23,36,0.92);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 27px;
+
+    min-height: 220px;
+
+    transition:
+        transform 0.25s,
+        border-color 0.25s;
+
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #33445c;
+
+}
+
+
+.card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.card-label {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.2px;
+
+}
+
+
+.card-header h3 {
+
+    font-size: 17px;
+
+    margin-top: 6px;
+
+}
+
+
+.card-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 13px;
+
+    font-size: 21px;
+
+}
+
+
+.blue {
+
+    background:
+        rgba(56,189,248,0.1);
+
+}
+
+
+.green {
+
+    background:
+        rgba(34,197,94,0.1);
+
+    color: var(--green);
+
+}
+
+
+.purple {
+
+    background:
+        rgba(167,139,250,0.1);
+
+}
+
+
+.orange {
+
+    background:
+        rgba(245,158,11,0.1);
+
+}
+
+
+/* =========================================
+   GAS
+========================================= */
+
+.gas-number {
+
+    margin-top: 25px;
+
+    font-size: 54px;
+
+    font-weight: 700;
+
+    letter-spacing: -2px;
+
+    color: var(--blue);
+
+}
+
+
+.gas-number small {
+
+    font-size: 15px;
+
+    color: var(--muted);
+
+    letter-spacing: 0;
+
+}
+
+
+.meter {
+
+    height: 9px;
+
+    background: #080d16;
+
+    border-radius: 20px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.meter-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--green),
+            var(--blue)
+        );
+
+    transition:
+        width 0.6s ease,
+        background 0.3s;
+
+}
+
+
+.meter-fill.danger {
+
+    background:
+        linear-gradient(
+            90deg,
+            #f59e0b,
+            #ef4444
+        );
+
+}
+
+
+.meter-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 9px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+.meter-info b {
+
+    color: #dce4ed;
+
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-card {
+
+    border-left:
+        4px solid var(--green);
+
+}
+
+
+.status-card.danger {
+
+    border-left-color:
+        var(--red);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239,68,68,0.08),
+            rgba(16,23,36,0.95)
+        );
+
+    animation:
+        dangerPulse 1.5s infinite;
+
+}
+
+
+@keyframes dangerPulse {
+
+    0%, 100% {
+
+        box-shadow:
+            0 0 0
+            rgba(239,68,68,0);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 30px
+            rgba(239,68,68,0.12);
+
+    }
+
+}
+
+
+.big-status {
+
+    font-size: 35px;
+
+    font-weight: 800;
+
+    color: var(--green);
+
+    margin-top: 32px;
+
+}
+
+
+.status-card.danger .big-status {
+
+    color: var(--red);
+
+}
+
+
+.status-description {
+
+    color: var(--muted);
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   SENSOR
+========================================= */
+
+.sensor-status {
+
+    margin-top: 35px;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: var(--green);
+
+}
+
+
+.live-dot {
+
+    display: inline-block;
+
+    width: 11px;
+
+    height: 11px;
+
+    background: var(--green);
+
+    border-radius: 50%;
+
+    margin-right: 8px;
+
+    box-shadow:
+        0 0 12px
+        var(--green);
+
+}
+
+
+.small-text {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 9px;
+
+}
+
+
+/* =========================================
+   TIME
+========================================= */
+
+.time-value {
+
+    font-size: 31px;
+
+    font-weight: bold;
+
+    color: var(--orange);
+
+    margin-top: 35px;
+
+}
+
+
+/* =========================================
+   ALERT
+========================================= */
+
+.alert-box {
+
+    margin-top: 20px;
+
+    padding: 20px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(239,68,68,0.08);
+
+    border:
+        1px solid
+        rgba(239,68,68,0.3);
+
+}
+
+
+.alert-box.hidden {
+
+    display: none;
+
+}
+
+
+.alert-icon {
+
+    font-size: 32px;
+
+}
+
+
+.alert-box h3 {
+
+    color: var(--red);
+
+    font-size: 16px;
+
+}
+
+
+.alert-box p {
+
+    color: #b5becb;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.info-section {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+}
+
+
+.info-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 18px;
+
+    border:
+        1px solid var(--border);
+
+    background: var(--card);
+
+    border-radius: 15px;
+
+}
+
+
+.info-card > span {
+
+    font-size: 23px;
+
+}
+
+
+.info-card h4 {
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+}
+
+
+.info-card p {
+
+    margin-top: 4px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid var(--border);
+
+    color: #566477;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .dashboard {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .info-section {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .hero {
+
+        padding: 30px;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .hero-icon {
+
+        display: none;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .app {
+
+        width: 94%;
+
+        padding-top: 20px;
+
+    }
+
+
+    .header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+
+    .connection-status {
+
+        align-self: flex-start;
+
+    }
+
+
+    .hero {
+
+        min-height: 220px;
+
+        padding: 25px;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 29px;
+
+    }
+
+
+    .info-section {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 5px;
+
+    }
+
+}

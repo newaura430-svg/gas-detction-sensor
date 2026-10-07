@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GasGuard | ESP32 Gas Monitoring</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background decoration -->
+    <div class="background-circle circle-1"></div>
+    <div class="background-circle circle-2"></div>
+
+
+    <div class="app">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🔥
+                </div>
+
+                <div>
+                    <h1>GasGuard</h1>
+
+                    <p>
+                        ESP32 Gas Monitoring System
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="connection-status">
+
+                <span id="connectionDot"
+                      class="status-dot offline">
+                </span>
+
+                <span id="connectionText">
+                    Connecting...
+                </span>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    ● LIVE MONITORING
+                </span>
+
+                <h2>
+                    Gas Safety
+                    <span>Dashboard</span>
+                </h2>
+
+                <p>
+                    Monitor gas concentration from your
+                    ESP32 sensor in real time.
+                </p>
+
+            </div>
+
+
+            <div class="hero-icon">
+
+                <div class="shield">
+                    🛡️
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= MAIN CARDS ================= -->
+
+        <section class="dashboard">
+
+
+            <!-- Gas Level -->
+
+            <div class="card gas-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <p class="card-label">
+                            CURRENT GAS LEVEL
+                        </p>
+
+                        <h3>
+                            Sensor Reading
+                        </h3>
+
+                    </div>
+
+                    <div class="card-icon blue">
+                        🌫️
+                    </div>
+
+                </div>
+
+
+                <div class="gas-number">
+
+                    <span id="gasLevel">
+                        --
+                    </span>
+
+                    <small>
+                        ADC
+                    </small>
+
+                </div>
+
+
+                <div class="meter">
+
+                    <div id="meterBar"
+                         class="meter-fill">
+                    </div>
+
+                </div>
+
+
+                <div class="meter-info">
+
+                    <span>
+                        0
+                    </span>
+
+                    <span>
+                        Threshold: <b>1800</b>
+                    </span>
+
+                    <span>
+                        4095
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Status -->
+
+            <div id="statusCard"
+                 class="card status-card normal">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <p class="card-label">
+                            SAFETY STATUS
+                        </p>
+
+                        <h3>
+                            Current Condition
+                        </h3>
+
+                    </div>
+
+                    <div id="statusIcon"
+                         class="card-icon green">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div id="gasStatus"
+                     class="big-status">
+
+                    NORMAL
+
+                </div>
+
+
+                <p id="statusDescription"
+                   class="status-description">
+
+                    Gas level is within the
+                    safe range.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Sensor -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <p class="card-label">
+                            SENSOR STATUS
+                        </p>
+
+                        <h3>
+                            ESP32 Connection
+                        </h3>
+
+                    </div>
+
+                    <div class="card-icon purple">
+                        📡
+                    </div>
+
+                </div>
+
+
+                <div id="sensorStatus"
+                     class="sensor-status">
+
+                    <span class="live-dot"></span>
+
+                    ACTIVE
+
+                </div>
+
+
+                <p class="small-text">
+
+                    MQ Gas Sensor
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Last Update -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <p class="card-label">
+                            LAST UPDATE
+                        </p>
+
+                        <h3>
+                            ThingSpeak
+                        </h3>
+
+                    </div>
+
+                    <div class="card-icon orange">
+                        🕐
+                    </div>
+
+                </div>
+
+
+                <div id="lastUpdate"
+                     class="time-value">
+
+                    --:--
+
+                </div>
+
+
+                <p id="lastDate"
+                   class="small-text">
+
+                    Waiting for data...
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= ALERT ================= -->
+
+        <section id="alertBox"
+                 class="alert-box hidden">
+
+            <div class="alert-icon">
+                ⚠️
+            </div>
+
+            <div>
+
+                <h3>
+                    GAS ALERT
+                </h3>
+
+                <p>
+                    Dangerous gas level detected.
+                    Please check the surrounding area
+                    immediately.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= INFORMATION ================= -->
+
+        <section class="info-section">
+
+            <div class="info-card">
+
+                <span>🔌</span>
+
+                <div>
+
+                    <h4>
+                        Device
+                    </h4>
+
+                    <p>
+                        ESP32
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>📊</span>
+
+                <div>
+
+                    <h4>
+                        Data Source
+                    </h4>
+
+                    <p>
+                        ThingSpeak
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>⏱️</span>
+
+                <div>
+
+                    <h4>
+                        Refresh Rate
+                    </h4>
+
+                    <p>
+                        15 seconds
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>🚨</span>
+
+                <div>
+
+                    <h4>
+                        Alarm Threshold
+                    </h4>
+
+                    <p>
+                        1800 ADC
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <p>
+                © 2026 GasGuard
+            </p>
+
+            <p>
+                ESP32 IoT Gas Monitoring System
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
